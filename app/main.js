@@ -49,7 +49,7 @@ async function run () {
       throw new Error(`No version identified${msg}`)
     }
 
-    core.warning(`Recognized "${version}"${msg}`)
+    core.info(`Recognized "${version}"${msg}`)
     core.setOutput('version', version)
     core.debug(` Detected version ${version}`)
 
@@ -60,7 +60,7 @@ async function run () {
       core.getInput('tag_suffix', { required: false })
     )
 
-    core.warning(`Attempting to create ${tag.name} tag.`)
+    core.info(`Attempting to create ${tag.name} tag.`)
     core.setOutput('tagrequested', tag.name)
     core.setOutput('prerelease', tag.prerelease ? 'yes' : 'no')
     core.setOutput('build', tag.build ? 'yes' : 'no')
