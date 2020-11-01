@@ -130,7 +130,7 @@ export default class Tag {
          });
 
          this._sha = newTag.data.sha;
-         core.warning(`Created new tag: ${newTag.data.tag}`);
+         core.info(`Created new tag: ${newTag.data.tag}`);
 
          // Create reference
          let newReference;
@@ -156,7 +156,7 @@ export default class Tag {
          this._uri = newReference.data.url;
          this._ref = newReference.data.ref;
 
-         core.warning(`Reference ${newReference.data.ref} available at ${newReference.data.url}` + os.EOL)
+         core.info(`Reference ${newReference.data.ref} available at ${newReference.data.url}` + os.EOL)
       } else {
          core.warning('Cannot push tag (it already exists).')
       }
