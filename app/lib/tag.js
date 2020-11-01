@@ -116,7 +116,7 @@ export default class Tag {
    }
 
    async push() {
-      let tagexists = await this.exists();
+      const tagexists = await this.exists();
 
       if (!tagexists) {
          // Create tag
@@ -150,7 +150,7 @@ export default class Tag {
                sha: newTag.data.sha
             });
 
-            throw e
+            throw e;
          }
 
          this._uri = newReference.data.url;
