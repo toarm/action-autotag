@@ -5,6 +5,9 @@ branding:
   icon: "tag"
   color: "blue"
 inputs:
+  GITHUB_TOKEN:
+    description: The repositories Github token
+    required: true
   root:
     description: Autotag will look for the appropriate file in in this location (relative to project root).
     required: false
