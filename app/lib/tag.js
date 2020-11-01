@@ -17,7 +17,7 @@ export default class Tag {
       this._exists  = null;
       this._sha     = '';
       this._uri     = '';
-      this._ref     = ''
+      this._ref     = '';
    }
 
    get name() {
@@ -93,12 +93,7 @@ export default class Tag {
    }
 
    async getTags() {
-      if (this._tags !== null) {
-         return this._tags.data
-      }
-
-      this._tags = await github.repos.listTags({owner, repo, per_page: 100});
-
+      this._tags = this._tags || await github.repos.listTags({owner, repo, per_page: 100});
       return this._tags.data
    }
 
